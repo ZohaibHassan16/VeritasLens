@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+jinja2
+nest-asyncio
+torch
+transformers
+accelerate
+bitsandbytes
+sentence-transformers
+spacy
+imagehash
+Pillow
+requests
+pyngrok
