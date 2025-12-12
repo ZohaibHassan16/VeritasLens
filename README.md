@@ -30,6 +30,9 @@ In the age of deepfakes and viral misinformation, simply looking at an image isn
 * **Frontend:** A simple, single-page dashboard that built with **HTML/CSS (BootStrap)** and **JavaScript** to display the report clearly.
 * **Deployment:** *Uvicorn* runs the FastAPI server, and *ngrok* creates a secure tunnel to the local server can be accessed via a public URL from the Colab notebook. 
 
+### Visual Output
+
+![Screenshot of the VeritasLens dashboard showing analysis flags and ELA heatmap](assets/dashboard_output.png)
 
 
 #### How to Run the Code:
