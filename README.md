@@ -26,7 +26,7 @@ The project runs a full web application designed to be launched directly from a 
 * **Frontend:** A simple, single-page dashboard built with **HTML/CSS (Bootstrap)** and **JavaScript** to display the report clearly and handle the submission form.
 * **Deployment:** **Uvicorn** runs the FastAPI server, and **`pyngrok`** creates a secure tunnel so the local server can be accessed via a public URL from the Colab notebook.
 
-## 🚀 How to Run the Code
+##  How to Run the Code
 
 This project is designed to run easily in a Google Colab environment, leveraging its free GPU for the large models.
 
