@@ -1,4 +1,4 @@
-VeritasLens: Media Forensic Dashboard
+ClaimTrace: Media Forensic Dashboard
 What is this?
 I built VeritasLens to help figure out if news images and their captions are actually real or just AI-generated/edited. With so many deepfakes and fake news stories going around, I wanted to make a simple dashboard where you can upload a photo and get a "fact-check" report using a few different AI models.
 
