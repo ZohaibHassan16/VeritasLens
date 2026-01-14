@@ -1,4 +1,4 @@
-# ClaimTrace 🕵️‍♂️
+# ClaimTrace
 
 This is **ClaimTrace**, a little project which aims to tackle the "fake news" problem using some AI tools and digital forensics. It's basically a tool that takes a news image and a claim (the headline), then runs a bunch of checks to see if they actually match up or if something fishy is going on.
 
