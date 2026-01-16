@@ -16,14 +16,16 @@
         .card { border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .card-header { background-color: white; border-bottom: 1px solid #eee; font-weight: 600; border-radius: 12px 12px 0 0 !important; }
 
-        /* Authenticity Meter */
+        /* ~~~ Authenticity Meter ~~~ */
+
         .meter-container { background: #e9ecef; border-radius: 20px; height: 30px; position: relative; overflow: hidden; }
         .meter-fill { height: 100%; border-radius: 20px; transition: width 1.0s ease-in-out; display: flex; align-items: center; justify-content: flex-end; padding-right: 15px; color: white; font-weight: bold; }
         .bg-safe { background: linear-gradient(90deg, #56ab2f, #a8e063); }
         .bg-warn { background: linear-gradient(90deg, #fceabb, #f8b500); color: #5d4037; }
         .bg-fake { background: linear-gradient(90deg, #cb2d3e, #ef473a); }
 
-        /* Flag Cards */
+        /* ~~~ Flag Cards ~~~ */
+        
         .flag-card { border-left: 5px solid; background: white; padding: 15px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
         .flag-critical { border-color: #dc3545; background-color: #fff5f5; }
         .flag-high { border-color: #fd7e14; background-color: #fffbf2; }
@@ -165,7 +167,7 @@
             const response = await fetch("/analyze", { method: "POST", body: formData });
             const data = await response.json();
 
-            // 1. AI Score
+            //  disp AI Score
             const score = data.ai_generated_probability;
             const bar = document.getElementById('aiScoreBar');
             const scoreText = document.getElementById('aiScoreText');
@@ -175,10 +177,10 @@
             else if (score < 70) bar.className = "meter-fill bg-warn";
             else bar.className = "meter-fill bg-fake";
 
-            // 2. ELA Heatmap
+            // disp ELA Heatmap
             document.getElementById('elaImage').src = data.ela_heatmap;
 
-            // 3. Flags
+            // disp Flags
             const flagsContainer = document.getElementById('flagsList');
             flagsContainer.innerHTML = '';
             if (data.inconsistencies.length === 0) {
@@ -188,11 +190,13 @@
                     let cardClass = 'flag-info';
                     let icon = 'fa-info-circle';
 
-                    // Logic to set colors based on Severity
+                    // setting colors based on severity....
+                    
                     if (flag.severity === 'Critical') { cardClass = 'flag-critical'; icon = 'fa-exclamation-triangle'; }
                     else if (flag.severity === 'High') { cardClass = 'flag-high'; icon = 'fa-exclamation-circle'; }
 
-                    // Logic to set icons based on Type
+                    // Logic to set icons based on Type...
+
                     if (flag.type.includes('Recycled')) icon = 'fa-recycle';
                     if (flag.type.includes('Location')) icon = 'fa-map-marker-alt';
                     if (flag.type.includes('AI')) icon = 'fa-robot';
@@ -206,7 +210,8 @@
                 });
             }
 
-            // 4. Details
+            //  ~~~~ details ~~~
+
             document.getElementById('aiCaption').innerText = '"' + data.ai_generated_caption + '"';
             const entContainer = document.getElementById('entitiesList');
             entContainer.innerHTML = '';
